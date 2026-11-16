@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="850" viewBox="0 0 900 850">
+<defs><style>.title{font:700 26px Arial;fill:#17324d}.node{fill:#fff;stroke:#547da5;stroke-width:2}.start{fill:#e8f3fb;stroke:#547da5;stroke-width:2}.op{font:15px Arial;fill:#243746}.decision{fill:#fff8e8;stroke:#c28b31;stroke-width:2}.arrow{stroke:#547da5;stroke-width:2;fill:none;marker-end:url(#a)}.label{font:13px Arial;fill:#536879}</style><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L9 3L0 6Z" fill="#547da5"/></marker></defs>
+<rect width="900" height="780" fill="#fff"/><text x="450" y="42" text-anchor="middle" class="title">Оформление заказа</text>
+<ellipse cx="450" cy="85" rx="80" ry="25" class="start"/><text x="450" y="90" text-anchor="middle" class="op">Начало</text><path d="M450 110V135" class="arrow"/>
+<rect x="300" y="135" width="300" height="55" rx="8" class="node"/><text x="450" y="169" text-anchor="middle" class="op">Покупатель подтверждает заказ</text><path d="M450 190V215" class="arrow"/>
+<polygon points="450,215 570,260 450,305 330,260" class="decision"/><text x="450" y="265" text-anchor="middle" class="op">Корзина заполнена?</text>
+<path d="M330 260H160V325" class="arrow"/><text x="230" y="248" class="label">Нет</text><rect x="45" y="325" width="230" height="55" rx="8" class="node"/><text x="160" y="359" text-anchor="middle" class="op">Показать ошибку</text>
+<path d="M450 305V335" class="arrow"/><text x="465" y="325" class="label">Да</text><rect x="300" y="335" width="300" height="55" rx="8" class="node"/><text x="450" y="369" text-anchor="middle" class="op">Проверить остатки книг</text><path d="M450 390V415" class="arrow"/>
+<polygon points="450,415 570,460 450,505 330,460" class="decision"/><text x="450" y="465" text-anchor="middle" class="op">Всех книг хватает?</text>
+<path d="M330 460H160V520" class="arrow"/><text x="230" y="448" class="label">Нет</text><rect x="45" y="520" width="230" height="55" rx="8" class="node"/><text x="160" y="554" text-anchor="middle" class="op">Показать ошибку остатка</text>
+<path d="M450 505V530" class="arrow"/><text x="465" y="523" class="label">Да</text><rect x="300" y="530" width="300" height="55" rx="8" class="node"/><text x="450" y="564" text-anchor="middle" class="op">Рассчитать сумму и скидку</text><path d="M450 585V610" class="arrow"/>
+<rect x="300" y="610" width="300" height="55" rx="8" class="node"/><text x="450" y="644" text-anchor="middle" class="op">Сохранить заказ</text><path d="M450 665V690" class="arrow"/>
+<rect x="300" y="690" width="300" height="55" rx="8" class="node"/><text x="450" y="724" text-anchor="middle" class="op">Показать номер и сумму заказа</text>
+<path d="M160 380V625" class="arrow"/><path d="M160 575V625" class="arrow"/><ellipse cx="160" cy="650" rx="55" ry="20" class="start"/><text x="160" y="655" text-anchor="middle" class="op">Конец</text>
+<path d="M450 745V780" class="arrow"/><ellipse cx="450" cy="805" rx="55" ry="20" class="start"/><text x="450" y="810" text-anchor="middle" class="op">Конец</text>
+</svg>

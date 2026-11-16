@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="760" viewBox="0 0 900 760">
+<defs><style>.title{font:700 26px Arial;fill:#17324d}.node{fill:#fff;stroke:#547da5;stroke-width:2}.start{fill:#e8f3fb;stroke:#547da5;stroke-width:2}.op{font:16px Arial;fill:#243746}.decision{fill:#fff8e8;stroke:#c28b31;stroke-width:2}.arrow{stroke:#547da5;stroke-width:2;fill:none;marker-end:url(#a)}.label{font:14px Arial;fill:#536879}</style><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L9 3L0 6Z" fill="#547da5"/></marker></defs>
+<rect width="900" height="700" fill="#fff"/><text x="450" y="42" text-anchor="middle" class="title">Поиск книги</text>
+<ellipse cx="450" cy="90" rx="90" ry="28" class="start"/><text x="450" y="96" text-anchor="middle" class="op">Начало</text>
+<rect x="300" y="145" width="300" height="60" rx="8" class="node"/><text x="450" y="171" text-anchor="middle" class="op">Покупатель вводит запрос</text><text x="450" y="193" text-anchor="middle" class="label">название, автор или жанр</text>
+<path d="M450 118V145" class="arrow"/><path d="M450 205V245" class="arrow"/>
+<polygon points="450,245 570,295 450,345 330,295" class="decision"/><text x="450" y="300" text-anchor="middle" class="op">Запрос заполнен?</text>
+<path d="M330 295H180V385" class="arrow"/><text x="245" y="284" class="label">Нет</text>
+<rect x="60" y="385" width="240" height="65" rx="8" class="node"/><text x="180" y="412" text-anchor="middle" class="op">Попросить ввести</text><text x="180" y="434" text-anchor="middle" class="op">запрос</text><path d="M180 385V175H300" class="arrow"/>
+<path d="M570 295H720V385" class="arrow"/><text x="630" y="284" class="label">Да</text>
+<rect x="600" y="385" width="240" height="65" rx="8" class="node"/><text x="720" y="423" text-anchor="middle" class="op">Искать в каталоге</text>
+<path d="M720 450V485" class="arrow"/><polygon points="720,485 825,530 720,575 615,530" class="decision"/><text x="720" y="535" text-anchor="middle" class="op">Есть совпадения?</text>
+<path d="M615 530H490V600" class="arrow"/><text x="550" y="518" class="label">Да</text><path d="M825 530H860V600" class="arrow"/><text x="835" y="518" class="label">Нет</text>
+<rect x="370" y="600" width="240" height="55" rx="8" class="node"/><text x="490" y="633" text-anchor="middle" class="op">Показать список книг</text>
+<rect x="620" y="600" width="240" height="55" rx="8" class="node"/><text x="740" y="633" text-anchor="middle" class="op">«Ничего не найдено»</text>
+<path d="M490 655V685" class="arrow"/><path d="M740 655V685" class="arrow"/>
+<ellipse cx="490" cy="715" rx="65" ry="22" class="start"/><ellipse cx="740" cy="715" rx="65" ry="22" class="start"/><text x="490" y="720" text-anchor="middle" class="op">Конец</text><text x="740" y="720" text-anchor="middle" class="op">Конец</text>
+</svg>
