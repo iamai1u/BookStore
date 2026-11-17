@@ -1,9 +1,83 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760">
-<defs><style>.title{font:700 26px Arial;fill:#17324d}.head{font:700 17px Arial;fill:#17324d}.txt{font:14px Arial;fill:#243746}.box{fill:#fff;stroke:#547da5;stroke-width:2}.link{stroke:#547da5;stroke-width:2;fill:none}.note{font:14px Arial;fill:#536879}</style></defs>
-<rect width="1100" height="760" fill="#fff"/><text x="550" y="40" text-anchor="middle" class="title">Диаграмма классов интернет-магазина</text>
-<g class="link"><path d="M300 180H400"/><path d="M560 180H665"/><path d="M300 420H400"/><path d="M560 420H665"/><path d="M480 260V340"/><path d="M745 260V340"/><path d="M825 420H900"/><path d="M745 500V590"/><path d="M480 500V590"/></g>
-<g class="box"><rect x="70" y="90" width="230" height="170" rx="8"/><rect x="400" y="90" width="160" height="170" rx="8"/><rect x="665" y="90" width="160" height="170" rx="8"/><rect x="70" y="340" width="230" height="160" rx="8"/><rect x="400" y="340" width="160" height="160" rx="8"/><rect x="665" y="340" width="160" height="160" rx="8"/><rect x="900" y="340" width="150" height="160" rx="8"/><rect x="330" y="590" width="300" height="120" rx="8"/><rect x="700" y="590" width="300" height="120" rx="8"/></g>
-<g class="head"><text x="185" y="118" text-anchor="middle">User</text><text x="480" y="118" text-anchor="middle">Cart</text><text x="745" y="118" text-anchor="middle">CartItem</text><text x="185" y="368" text-anchor="middle">Book</text><text x="480" y="368" text-anchor="middle">Order</text><text x="745" y="368" text-anchor="middle">OrderItem</text><text x="975" y="368" text-anchor="middle">Payment</text><text x="480" y="618" text-anchor="middle">IPayment</text><text x="850" y="618" text-anchor="middle">CardPayment / OnlinePayment</text></g>
-<g class="txt"><text x="90" y="148">id, name, email</text><text x="90" y="171">passwordHash, role</text><text x="90" y="205">register(), login()</text><text x="420" y="148">id, userId, status</text><text x="420" y="180">addBook()</text><text x="420" y="203">removeBook()</text><text x="685" y="148">id, bookId</text><text x="685" y="171">quantity, unitPrice</text><text x="90" y="398">id, title, author</text><text x="90" y="421">genre, price</text><text x="90" y="444">stockQuantity</text><text x="420" y="398">id, userId</text><text x="420" y="421">orderDate, status</text><text x="420" y="444">totalAmount</text><text x="420" y="467">calculateTotal()</text><text x="685" y="398">id, bookId</text><text x="685" y="421">quantity, unitPrice</text><text x="920" y="398">id, orderId</text><text x="920" y="421">amount, method</text><text x="920" y="444">status, paidAt</text><text x="350" y="652">pay(orderId, amount)</text><text x="720" y="652">Реализации общего интерфейса IPayment</text></g>
-<g class="note"><text x="185" y="290" text-anchor="middle">User 1 — 0..* Order</text><text x="480" y="290" text-anchor="middle">Cart 1 — 0..* CartItem</text><text x="745" y="290" text-anchor="middle">CartItem * — 1 Book</text><text x="480" y="535" text-anchor="middle">Order 1 — 1..* OrderItem</text><text x="745" y="535" text-anchor="middle">OrderItem * — 1 Book</text><text x="975" y="535" text-anchor="middle">Order 1 — 0..1 Payment</text><text x="550" y="738" text-anchor="middle">Позиции корзины и заказа принадлежат своему контейнеру; книга может существовать отдельно.</text></g>
+<svg xmlns="http://www.w3.org/2000/svg" width="2300" height="1110" viewBox="0 0 2300 1110">
+<defs><style>.title{font:700 30px Arial;fill:#17324d}.subtitle{font:16px Arial;fill:#536879}.box{fill:#fff;stroke:#547da5;stroke-width:2}.service{fill:#f3f8fc;stroke:#547da5;stroke-width:2}.note{fill:#fff9e9;stroke:#c28b31;stroke-width:2}.head{font:700 21px Arial;fill:#17324d}.kind{font:italic 14px Arial;fill:#65798a}.txt{font:16px Arial;fill:#243746}.edge{stroke:#547da5;stroke-width:2;fill:none;marker-end:url(#arr)}.noend{marker-end:none}.dash{stroke-dasharray:7 6}.elabel{font:14px Arial;fill:#536879}.lane{font:700 18px Arial;fill:#547da5}</style><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L9 3L0 6Z" fill="#547da5"/></marker></defs>
+<rect width="100%" height="100%" fill="#fff"/><text x="1150" y="45" text-anchor="middle" class="title">Диаграмма классов книжного магазина</text>
+<text x="50" y="100" class="lane">Модели</text><text x="50" y="785" class="lane">Сервисы</text>
+<path d="M860 235H810" class="edge "/>
+<text x="835" y="223" class="elabel">book</text>
+<path d="M1040 449V360" class="edge noend"/><polygon points="1040,440 1049,449 1040,458 1031,449" fill="#547da5"/>
+<text x="1052" y="404.5" class="elabel">items 0..*</text>
+<path d="M220 800V360" class="edge dash"/>
+<text x="234" y="580" class="elabel">users</text>
+<path d="M630 800V360" class="edge dash"/>
+<text x="644" y="580" class="elabel">books</text>
+<path d="M1040 800V710" class="edge dash"/>
+<text x="1054" y="755" class="elabel">cart</text>
+<path d="M1485 800V360" class="edge dash"/>
+<text x="1499" y="580" class="elabel">orders</text>
+<path d="M1270 900H1240V575H1220" class="edge dash"/>
+<text x="1247" y="740" class="elabel">cart</text>
+<path d="M1270 850H1240V380H220V360" class="edge dash"/>
+<text x="700" y="370" class="elabel">user</text>
+<path d="M1760 235H1700" class="edge "/>
+<text x="1730" y="223" class="elabel"></text>
+<path d="M1865 800V740H1880V690" class="edge dash"/>
+<text x="1810" y="735" class="elabel">наследует</text>
+<path d="M2135 800V740H2070V690" class="edge dash"/>
+<text x="2080" y="735" class="elabel">наследует</text>
+<rect x="40" y="110" width="360" height="250" rx="9" class="box"/><text x="58" y="140" class="head">User</text><text x="58" y="162" class="kind">Модель</text><path d="M40 174H400" stroke="#c7d5e2"/>
+<text x="58" y="204" class="txt">id, name, email, password, role</text>
+<text x="58" y="235" class="txt">constructor(id, name, email, password, role)</text>
+<rect x="450" y="110" width="360" height="250" rx="9" class="box"/><text x="468" y="140" class="head">Book</text><text x="468" y="162" class="kind">Модель</text><path d="M450 174H810" stroke="#c7d5e2"/>
+<text x="468" y="204" class="txt">id, title, author, price, genre</text>
+<text x="468" y="235" class="txt">constructor(id, title, author, price, genre)</text>
+<rect x="860" y="110" width="360" height="250" rx="9" class="box"/><text x="878" y="140" class="head">CartItem</text><text x="878" y="162" class="kind">Модель</text><path d="M860 174H1220" stroke="#c7d5e2"/>
+<text x="878" y="204" class="txt">book: Book</text>
+<text x="878" y="235" class="txt">quantity (по умолчанию 1)</text>
+<text x="878" y="266" class="txt">constructor(book, quantity = 1)</text>
+<text x="878" y="297" class="txt">getSubtotal() = book.price × quantity</text>
+<rect x="1270" y="110" width="430" height="250" rx="9" class="box"/><text x="1288" y="140" class="head">Order</text><text x="1288" y="162" class="kind">Модель</text><path d="M1270 174H1700" stroke="#c7d5e2"/>
+<text x="1288" y="204" class="txt">id, items, total, date, status</text>
+<text x="1288" y="235" class="txt">userId, userEmail</text>
+<text x="1288" y="266" class="txt">constructor(id, items, total, date)</text>
+<rect x="1760" y="110" width="430" height="250" rx="9" class="box"/><text x="1778" y="140" class="head">Payment</text><text x="1778" y="162" class="kind">Модель</text><path d="M1760 174H2190" stroke="#c7d5e2"/>
+<text x="1778" y="204" class="txt">id, orderId, amount, method</text>
+<text x="1778" y="235" class="txt">status, paidAt</text>
+<text x="1778" y="266" class="txt">constructor(id, orderId, amount, method)</text>
+<text x="1778" y="297" class="txt">completePayment()</text>
+<rect x="1270" y="440" width="430" height="250" rx="9" class="box"/><text x="1288" y="470" class="head">OrderItem</text><text x="1288" y="492" class="kind">Модель</text><path d="M1270 504H1700" stroke="#c7d5e2"/>
+<text x="1288" y="534" class="txt">id, bookId, title, quantity, unitPrice</text>
+<text x="1288" y="565" class="txt">constructor(id, bookId, title, quantity, unitPrice)</text>
+<text x="1288" y="596" class="txt">getTotal()</text>
+<rect x="1760" y="440" width="430" height="250" rx="9" class="service"/><text x="1778" y="470" class="head">IPayment</text><text x="1778" y="492" class="kind">Интерфейс</text><path d="M1760 504H2190" stroke="#c7d5e2"/>
+<text x="1778" y="534" class="txt">pay(order, amount): Payment</text>
+<rect x="40" y="800" width="360" height="250" rx="9" class="service"/><text x="58" y="830" class="head">UserService</text><text x="58" y="852" class="kind">Сервис</text><path d="M40 864H400" stroke="#c7d5e2"/>
+<text x="58" y="894" class="txt">users, currentUser</text>
+<text x="58" y="925" class="txt">register(name, email, password)</text>
+<text x="58" y="956" class="txt">login(email, password)</text>
+<text x="58" y="987" class="txt">logout()</text>
+<rect x="450" y="800" width="360" height="250" rx="9" class="service"/><text x="468" y="830" class="head">BookCatalogService</text><text x="468" y="852" class="kind">Сервис</text><path d="M450 864H810" stroke="#c7d5e2"/>
+<text x="468" y="894" class="txt">books: Book[]</text>
+<text x="468" y="925" class="txt">constructor(books)</text>
+<text x="468" y="956" class="txt">search(query)</text>
+<rect x="860" y="800" width="360" height="250" rx="9" class="service"/><text x="878" y="830" class="head">CartService</text><text x="878" y="852" class="kind">Сервис</text><path d="M860 864H1220" stroke="#c7d5e2"/>
+<text x="878" y="894" class="txt">cart: Cart</text>
+<text x="878" y="925" class="txt">add(book), remove(bookId)</text>
+<text x="878" y="956" class="txt">changeQuantity(bookId, quantity)</text>
+<text x="878" y="987" class="txt">getCount(), getTotal()</text>
+<rect x="1270" y="800" width="430" height="250" rx="9" class="service"/><text x="1288" y="830" class="head">OrderService</text><text x="1288" y="852" class="kind">Сервис</text><path d="M1270 864H1700" stroke="#c7d5e2"/>
+<text x="1288" y="894" class="txt">orders: Order[]</text>
+<text x="1288" y="925" class="txt">createOrder(cart, user)</text>
+<text x="1288" y="956" class="txt">getOrders(user)</text>
+<text x="1288" y="987" class="txt">updateStatus(orderId, status)</text>
+<rect x="1740" y="800" width="250" height="250" rx="9" class="service"/><text x="1758" y="830" class="head">CardPayment</text><text x="1758" y="852" class="kind">Сервис</text><path d="M1740 864H1990" stroke="#c7d5e2"/>
+<text x="1758" y="894" class="txt">pay(order, amount)</text>
+<text x="1758" y="925" class="txt">method: «Банковская карта»</text>
+<rect x="2010" y="800" width="250" height="250" rx="9" class="service"/><text x="2028" y="830" class="head">OnlinePayment</text><text x="2028" y="852" class="kind">Сервис</text><path d="M2010 864H2260" stroke="#c7d5e2"/>
+<text x="2028" y="894" class="txt">pay(order, amount)</text>
+<text x="2028" y="925" class="txt">method: «Онлайн-оплата»</text>
+<rect x="860" y="440" width="360" height="270" rx="9" class="box"/><text x="878" y="470" class="head">Cart</text><text x="878" y="492" class="kind">Модель</text><path d="M860 504H1220" stroke="#c7d5e2"/>
+<text x="878" y="534" class="txt">items: CartItem[]</text>
+<text x="878" y="565" class="txt">addBook(book), removeBook(bookId)</text>
+<text x="878" y="596" class="txt">changeQuantity(bookId, quantity)</text>
+<text x="878" y="627" class="txt">getCount(), getTotal()</text>
 </svg>
